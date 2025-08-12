@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jetevu Richard - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            margin: 8px 0 0;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid #2980b9;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Skills in columns */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        .skills-list li {
+            background: #f0f3f7;
+            padding: 8px 12px;
+            border-radius: 6px;
+            list-style-type: none;
+        }
+
+        /* Project links */
+        .project-link {
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        header, .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jetevu Richard</h1>
+        <p>Junior Data Analyst / Junior Data Scientist / Junior ML Engineer | Medical Laboratory Science Background</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>📞 +2349031819343</p>
+            <p>📞 +2348050345460</p>
+            <p>📧 <a href="mailto:fezzythrillz@gmail.com">fezzythrillz@gmail.com</a></p>
+            <p>💻 <a href="https://github.com/ritchiee1" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/richard-jetevu-31a648331" target="_blank">Linkedln</a> | <a href="https://medium.com/@fezzythrillz" target="_blank">Medium</a></p>
+        </section>
+
+        <section class="profile">
+            <h2>Profile</h2>
+            <p>Motivated Junior Data Scientist with a strong background in Medical Laboratory Science and hands-on expertise in Python, SQL, and machine learning. Experienced in transforming raw datasets into actionable insights and building predictive models that drive informed decision-making. Passionate about leveraging data to solve real-world problems across diverse industries.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li><strong>Programming & Tools:</strong> Python, R, SQL, Excel, Power BI, Git/GitHub</li>
+                <li><strong>ML & AI:</strong> Classification & Regression, CNNs, Random Forest, SVM, Logistic Regression, MLP</li>
+                <li><strong>Libraries:</strong> Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras</li>
+                <li><strong>Data Skills:</strong> Cleaning, Feature Engineering, Visualization, Model Tuning</li>
+                <li><strong>Specialization:</strong> Healthcare Data Analysis, Histopathology Image Analysis</li>
+                <li><strong>Others:</strong> API Data Extraction, Web Scraping, Streamlit Deployment</li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <h3>Laboratory Intern – Capitol Hill Clinic/Hospitals</h3>
+            <p><em>July 2023 – Oct 2023</em></p>
+            <ul>
+                <li>Performed diagnostic tests and analyzed laboratory samples with precision.</li>
+                <li>Maintained lab equipment ensuring data accuracy and safety compliance.</li>
+                <li>Collaborated with senior scientists for accurate data documentation.</li>
+                <li>Applied quality control measures to uphold data integrity.</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Colon Tissue Image Classification:</strong> CNN model achieving 75.8% accuracy <a class="project-link" href="https://github.com/ritchiee1/Colon-Tissue-Histopathology-Image-Classification-using-CNN" target="_blank">[GitHub]</a></li>
+                <li><strong>Hospital Management Analytics:</strong> SQL + Power BI dashboard <a class="project-link" href="https://github.com/ritchiee1/hospital-management-analytics-with-sql-and-powerbi" target="_blank">[GitHub]</a></li>
+                <li><strong>Obesity Prediction Web App:</strong> Machine Learning + Streamlit <a class="project-link" href="https://github.com/ritchiee1/Obesity-Prediction-Application-using-ML-and-streamlit" target="_blank">[GitHub]</a></li>
+                <li><strong>911 Calls Analysis:</strong> Public safety data visualizations <a class="project-link" href="https://github.com/ritchiee1/911-Calls-Analysis-exploring-public-safety-data" target="_blank">[GitHub]</a></li>
+                <li><strong>Bike Sales Analysis:</strong> Excel dashboard</li>
+                <li><strong>House Price Prediction:</strong> ML model using R</li>
+                <li><strong>Bitcoin Candlestick Visualizer:</strong> API + Plotly visualization</li>
+            </ul>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Medical Laboratory Science</strong> – 2:1, Histopathology specialization (2019–2024)</p>
+            <p><strong>Data Science Bootcamp</strong> – Python, ML, Visualization (2024–2025)</p>
+        </section>
+
+        <section class="hobbies">
+            <h2>Hobbies</h2>
+            <p>Working out, Cycling, Cooking, Reading, Exploring new data science technologies</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Jetevu Richard | Portfolio Website</p>
+    </footer>
+
+</body>
+</html>
