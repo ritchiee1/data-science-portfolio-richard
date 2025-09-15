@@ -1,0 +1,5 @@
+npm create vite@latest portfolio -- --template react
+cd portfolio
+npm install
+npm install tailwindcss postcss autoprefixer framer-motion react-icons emailjs-com gh-pages
+npx tailwindcss init -p
