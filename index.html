@@ -1,206 +1,694 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jetevu Richard - Portfolio</title>
+  <meta name="description" content="Jetevu Richard - Junior Data Analyst and Scientist with a background in Medical Laboratory Science, healthcare analytics, Python, SQL, Excel, Power BI and machine learning.">
+  <title>Jetevu Richard - Junior Data Analyst / Scientist</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* ---------- RESET ---------- */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f5f7fa;
       color: #333;
+      line-height: 1.6;
       transition: background 0.3s, color 0.3s;
     }
-    a {color: inherit; text-decoration: none;}
-    ul {list-style: none;}
-    section {margin: 60px auto; width: 90%; max-width: 1100px;}
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    section {
+      margin: 60px auto;
+      width: 90%;
+      max-width: 1100px;
+    }
 
     /* ---------- DARK MODE ---------- */
-    body.dark {background: #121212; color: #eee;}
-    body.dark header {background: linear-gradient(135deg, #1a1a1a, #333);}
-    body.dark .card {background: #1e1e1e;}
+
+    body.dark {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark header {
+      background: linear-gradient(135deg, #1a1a1a, #333);
+    }
+
+    body.dark .card,
+    body.dark .experience-card,
+    body.dark .skill-category {
+      background: #1e1e1e;
+      color: #eee;
+    }
+
+    body.dark .timeline-item span {
+      color: #aaa;
+    }
+
+    body.dark .skill-bar {
+      background: #333;
+    }
+
     .toggle-dark {
-      position: fixed; top: 20px; right: 20px; 
-      cursor: pointer; font-size: 1.5rem;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 1.5rem;
       color: gold;
+      z-index: 1000;
     }
 
     /* ---------- HEADER ---------- */
+
     header {
       background: linear-gradient(135deg, #2c3e50, #34495e);
-      color: white; text-align: center;
-      padding: 80px 20px; position: relative;
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+      position: relative;
       overflow: hidden;
     }
-    header h1 {font-size: 3rem; animation: fadeInDown 1s;}
-    header p {margin-top: 10px; font-size: 1.3rem; animation: fadeInUp 1s;}
-    .cta {margin-top: 20px;}
+
+    header h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1s;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      animation: fadeInUp 1s;
+    }
+
+    .header-contact {
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      margin-top: 25px;
+    }
+
     .cta a {
-      display: inline-block; margin: 0 10px;
-      padding: 12px 24px; border-radius: 25px;
-      background: #2980b9; color: white; font-weight: bold;
+      display: inline-block;
+      margin: 5px 8px;
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: #2980b9;
+      color: white;
+      font-weight: bold;
       transition: transform 0.2s, background 0.3s;
     }
-    .cta a:hover {background: #1abc9c; transform: scale(1.05);}
-    @keyframes fadeInDown {from {opacity: 0; transform: translateY(-30px);} to {opacity: 1; transform: translateY(0);}}
-    @keyframes fadeInUp {from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);}}
+
+    .cta a:hover {
+      background: #1abc9c;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     /* ---------- SECTION TITLES ---------- */
-    h2 {margin-bottom: 20px; border-left: 5px solid #2980b9; padding-left: 10px;}
 
-    /* ---------- PROJECT CARDS ---------- */
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    h2 {
+      margin-bottom: 25px;
+      border-left: 5px solid #2980b9;
+      padding-left: 10px;
     }
-    .card {
-      background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 20px; transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2);}
-    .card h3 {margin-bottom: 10px;}
-    .card a {color: #0066cc; font-weight: bold;}
 
-    /* ---------- EXPERIENCE TIMELINE ---------- */
-    .timeline {border-left: 3px solid #2980b9; padding-left: 20px;}
-    .timeline-item {margin-bottom: 20px; position: relative;}
-    .timeline-item::before {
-      content: ""; position: absolute; left: -11px; top: 5px;
-      width: 15px; height: 15px; border-radius: 50%; background: #2980b9;
+    /* ---------- PROFILE ---------- */
+
+    .profile p {
+      font-size: 1.05rem;
+      max-width: 950px;
     }
-    .timeline-item h3 {margin-bottom: 5px; color: #2980b9;}
-    .timeline-item span {font-size: 0.9rem; color: gray;}
 
     /* ---------- SKILLS ---------- */
+
     .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
-    .skill-bar {background: #ddd; border-radius: 20px; overflow: hidden;}
-    .skill-bar div {
-      height: 20px; text-align: right; padding-right: 10px;
-      color: white; font-size: 0.8rem; line-height: 20px;
+
+    .skill-category {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
     }
-    .python {width: 90%; background: #306998;}
-    .sql {width: 80%; background: #f39c12;}
-    .ml {width: 85%; background: #27ae60;}
-    .tensorflow {width: 70%; background: #e67e22;}
+
+    .skill-category:hover {
+      transform: translateY(-4px);
+    }
+
+    .skill-category h3 {
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .skill-category p {
+      font-size: 0.95rem;
+    }
+
+    /* ---------- EXPERIENCE ---------- */
+
+    .timeline {
+      border-left: 3px solid #2980b9;
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #2980b9;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 4px;
+      color: #2980b9;
+    }
+
+    .timeline-item span {
+      display: block;
+      font-size: 0.9rem;
+      color: gray;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .timeline-item li {
+      margin-bottom: 5px;
+    }
+
+    /* ---------- PROJECT CARDS ---------- */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 22px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    body.dark .card a {
+      color: #5dade2;
+    }
+
+    /* ---------- EDUCATION ---------- */
+
+    .education-card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    body.dark .education-card {
+      background: #1e1e1e;
+    }
+
+    .education-card h3 {
+      color: #2980b9;
+    }
+
+    .education-card span {
+      color: gray;
+    }
 
     /* ---------- FOOTER ---------- */
+
     footer {
-      text-align: center; padding: 20px; background: #2c3e50; color: white;
+      text-align: center;
+      padding: 30px 20px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 60px;
     }
-    .socials a {margin: 0 10px; font-size: 1.3rem; color: white; transition: color 0.3s;}
-    .socials a:hover {color: #1abc9c;}
+
+    .socials {
+      margin-bottom: 15px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.3rem;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #1abc9c;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.05rem;
+      }
+
+      section {
+        width: 92%;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Dark mode toggle -->
-  <div class="toggle-dark"><i class="fas fa-moon"></i></div>
+  <!-- Dark Mode -->
+  <div class="toggle-dark" title="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </div>
 
+  <!-- HEADER -->
   <header>
     <h1>Jetevu Richard</h1>
-    <p>Junior Data Scientist | ML Engineer | Medical Laboratory Science Background</p>
+
+    <p>Junior Data Analyst / Scientist</p>
+
+    <div class="header-contact">
+      <i class="fas fa-envelope"></i>
+      fezzythrillz@gmail.com
+      &nbsp; | &nbsp;
+      <i class="fas fa-phone"></i>
+      +234 903 181 9343
+    </div>
+
     <div class="cta">
-      <a href="#">View Resume</a>
       <a href="#projects">View Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="https://github.com/ritchiee1" target="_blank">GitHub</a>
     </div>
   </header>
 
+  <!-- PROFILE -->
   <section class="profile">
     <h2>Profile</h2>
-    <p>Motivated Junior Data Scientist with a strong background in Medical Laboratory Science and hands-on expertise in Python, SQL, and machine learning. Experienced in transforming raw datasets into actionable insights and building predictive models that drive informed decision-making.</p>
+
+    <p>
+      Data Analyst with a strong foundation in Medical Laboratory Science and
+      hands-on experience in data analysis, SQL, Excel, Python, and Power BI.
+      Experienced in cleaning, analyzing, and visualizing healthcare and
+      business datasets to generate actionable insights. Interested in using
+      data to support decision-making and improve operational outcomes.
+    </p>
   </section>
 
+  <!-- SKILLS -->
   <section class="skills">
     <h2>Skills</h2>
+
     <div class="skills-grid">
-      <div>
-        <p>Python</p>
-        <div class="skill-bar"><div class="python">90%</div></div>
+
+      <div class="skill-category">
+        <h3>Programming & Tools</h3>
+        <p>
+          Python, R, SQL, Excel, Power BI, Git/GitHub,
+          Jupyter Notebook, Google Colab
+        </p>
       </div>
-      <div>
-        <p>SQL</p>
-        <div class="skill-bar"><div class="sql">80%</div></div>
+
+      <div class="skill-category">
+        <h3>Machine Learning</h3>
+        <p>
+          CNNs, Random Forest, Logistic Regression, SVM,
+          Neural Networks, Classification, Regression
+        </p>
       </div>
-      <div>
-        <p>Machine Learning</p>
-        <div class="skill-bar"><div class="ml">85%</div></div>
+
+      <div class="skill-category">
+        <h3>Libraries</h3>
+        <p>
+          Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn,
+          TensorFlow, Keras, dplyr
+        </p>
       </div>
-      <div>
-        <p>TensorFlow/Keras</p>
-        <div class="skill-bar"><div class="tensorflow">70%</div></div>
+
+      <div class="skill-category">
+        <h3>Data Analysis</h3>
+        <p>
+          Data Cleaning, Feature Engineering, Feature Selection,
+          Statistical Analysis, Data Visualization, Model Tuning
+        </p>
       </div>
+
+      <div class="skill-category">
+        <h3>Healthcare & Business</h3>
+        <p>
+          Healthcare Data Analysis, Histopathology Image Analysis,
+          Business Intelligence
+        </p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Other Skills</h3>
+        <p>
+          API Data Extraction, Web Scraping, Streamlit Deployment
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <section class="experience">
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
     <h2>Experience</h2>
+
     <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>Freelance Data Analyst / ML Engineer</h3>
+        <span>2025 – Present</span>
+
+        <ul>
+          <li>Built Excel and Power BI dashboards for reporting and data visualization.</li>
+          <li>Performed SQL queries for data cleaning, validation, and transformation.</li>
+          <li>Developed machine learning models for classification, forecasting, and image analysis.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Data Science Intern – Meritshot</h3>
+        <span>Nov 2025 – Mar 2026 | Remote</span>
+
+        <ul>
+          <li>Built a loan approval prediction model using machine learning.</li>
+          <li>Developed a credit card fraud detection system.</li>
+          <li>Created a hybrid movie recommendation system using multiple recommendation methods.</li>
+          <li>Conducted breast cancer data analysis using histopathology and structured datasets.</li>
+          <li>Wrote technical and non-technical articles explaining data science concepts and projects.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Medical Laboratory Scientist Intern – State Specialist Hospital, Ikere</h3>
+        <span>2025 – 2026 | Nigeria</span>
+
+        <ul>
+          <li>Performed laboratory investigations and ensured accurate reporting of diagnostic results.</li>
+          <li>Maintained attention to detail, data accuracy, and compliance with laboratory standards.</li>
+          <li>Supported documentation and record management of laboratory processes.</li>
+          <li>Assisted in organizing patient and test data with accuracy and confidentiality.</li>
+          <li>Coordinated workflow between laboratory staff and administrative units.</li>
+          <li>Worked collaboratively with healthcare professionals while managing time-sensitive responsibilities.</li>
+        </ul>
+      </div>
+
       <div class="timeline-item">
         <h3>Data Science Intern – Coding Samurai</h3>
-        <span>Aug 2025 – Sept 2025</span>
+        <span>Aug 2025 – Sept 2025 | Remote</span>
+
         <ul>
-          <li>Titanic EDA & Logistic Regression: Built predictive survival models.</li>
-          <li>Apple Stock Forecasting: Applied ARIMA to financial data.</li>
-          <li>Sales Forecasting: Linear regression on business datasets.</li>
+          <li>Conducted exploratory data analysis on the Titanic dataset.</li>
+          <li>Built and evaluated a Logistic Regression classification model.</li>
+          <li>Applied ARIMA time-series forecasting to Apple stock price data.</li>
+          <li>Developed a sales forecasting model using Linear Regression.</li>
         </ul>
       </div>
+
+      <div class="timeline-item">
+        <h3>Data Science Trainee – Tech365 Data Science Bootcamp</h3>
+        <span>July 2024 – Jan 2025</span>
+
+        <ul>
+          <li>Conducted exploratory data analysis and feature engineering on structured datasets.</li>
+          <li>Built and evaluated classification and regression models using Python.</li>
+          <li>Performed SQL queries for data cleaning, aggregation, and transformation.</li>
+          <li>Developed interactive Power BI dashboards for data visualization and reporting.</li>
+        </ul>
+      </div>
+
       <div class="timeline-item">
         <h3>Laboratory Intern – Capitol Hill Clinic/Hospitals</h3>
-        <span>July 2023 – Oct 2023</span>
+        <span>Jul 2022 – Oct 2022 | Warri, Delta State, Nigeria</span>
+
         <ul>
-          <li>Performed diagnostic tests and maintained lab equipment.</li>
-          <li>Collaborated with scientists for accurate reporting.</li>
+          <li>Performed diagnostic tests and analyzed clinical laboratory samples.</li>
+          <li>Maintained laboratory equipment and supported safety and quality procedures.</li>
+          <li>Assisted senior scientists with data recording and documentation.</li>
+          <li>Applied quality control measures to support data integrity and validation.</li>
         </ul>
       </div>
+
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="projects-grid">
+
       <div class="card">
-        <h3>Colon Tissue Classification (CNN)</h3>
-        <p>Histopathology image classification with CNN (75.8% accuracy).</p>
-        <a href="https://github.com/ritchiee1/Colon-Tissue-Histopathology-Image-Classification-using-CNN" target="_blank">GitHub</a>
+        <h3>Colon Histopathology Classifier</h3>
+        <p>
+          CNN-based image classification model for analyzing
+          colon histopathology tissue images.
+        </p>
+
+        <a href="https://github.com/ritchiee1/Colon-Tissue-Histopathology-Image-Classification-using-CNN"
+           target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </div>
+
       <div class="card">
-        <h3>Hospital Management Analytics</h3>
-        <p>SQL + Power BI dashboard for healthcare data insights.</p>
-        <a href="https://github.com/ritchiee1/hospital-management-analytics-with-sql-and-powerbi" target="_blank">GitHub</a>
+        <h3>Healthcare Analytics Dashboard</h3>
+        <p>
+          SQL and Power BI project analyzing hospital management,
+          patient, and billing data.
+        </p>
+
+        <a href="https://github.com/ritchiee1/hospital-management-analytics-with-sql-and-powerbi"
+           target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </div>
+
       <div class="card">
-        <h3>Obesity Prediction Web App</h3>
-        <p>Streamlit ML web app predicting obesity risk.</p>
-        <a href="https://github.com/ritchiee1/Obesity-Prediction-Application-using-ML-and-streamlit" target="_blank">GitHub</a>
+        <h3>Obesity Prediction App</h3>
+        <p>
+          Streamlit machine learning application designed to
+          predict obesity risk from health-related data.
+        </p>
+
+        <a href="https://github.com/ritchiee1/Obesity-Prediction-Application-using-ML-and-streamlit"
+           target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </div>
+
       <div class="card">
-        <h3>911 Calls Analysis</h3>
-        <p>Explored public safety dataset with Python visualization.</p>
-        <a href="https://github.com/ritchiee1/911-Calls-Analysis-exploring-public-safety-data" target="_blank">GitHub</a>
+        <h3>911 Emergency Calls Analysis</h3>
+        <p>
+          Analysis of more than 100,000 public safety records
+          using Python to identify patterns and trends.
+        </p>
+
+        <a href="https://github.com/ritchiee1/911-Calls-Analysis-exploring-public-safety-data"
+           target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </div>
+
+      <div class="card">
+        <h3>Sales & Finance Dashboards</h3>
+        <p>
+          Excel dashboards using Pivot Tables and reporting
+          techniques to analyze business and financial data.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Breast Cancer Data Analysis</h3>
+        <p>
+          Analysis combining histopathology images with structured
+          clinical data to explore breast cancer classification.
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <footer>
-    <div class="socials">
-      <a href="https://github.com/ritchiee1" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/richard-jetevu-31a648331" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:fezzythrillz@gmail.com"><i class="fas fa-envelope"></i></a>
+  <!-- EDUCATION -->
+  <section class="education">
+    <h2>Education</h2>
+
+    <div class="education-card">
+      <h3>Bachelor of Medical Laboratory Science (BMLS)</h3>
+      <p>Afe Babalola University, Nigeria</p>
+      <p>Histopathology Specialization | Second Class Upper (2:1)</p>
+      <span>2019 – 2024</span>
     </div>
-    <p>© 2025 Jetevu Richard | Portfolio Website</p>
+
+    <div class="education-card">
+      <h3>Data Science Bootcamp</h3>
+      <p>Tech365 Data Science Bootcamp</p>
+      <p>
+        Training in Python, SQL, Excel, Power BI, Statistics,
+        Machine Learning, Data Analysis and Visualization.
+      </p>
+      <span>2024 – 2025</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact</h2>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:fezzythrillz@gmail.com">
+        fezzythrillz@gmail.com
+      </a>
+    </p>
+
+    <p>
+      <strong>GitHub:</strong>
+      <a href="https://github.com/ritchiee1" target="_blank">
+        github.com/ritchiee1
+      </a>
+    </p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a href="https://linkedin.com/in/richard-jetevu-31a648331" target="_blank">
+        linkedin.com/in/richard-jetevu-31a648331
+      </a>
+    </p>
+
+    <p>
+      <strong>Portfolio:</strong>
+      <a href="https://ritchiee1.github.io/data-science-portfolio-richard" target="_blank">
+        ritchiee1.github.io/data-science-portfolio-richard
+      </a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="socials">
+      <a href="https://github.com/ritchiee1" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://linkedin.com/in/richard-jetevu-31a648331" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="mailto:fezzythrillz@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p>© 2026 Jetevu Richard | Data Analyst / Scientist</p>
+
   </footer>
 
   <script>
     // Dark mode toggle
     document.querySelector('.toggle-dark').addEventListener('click', () => {
       document.body.classList.toggle('dark');
+
+      const icon = document.querySelector('.toggle-dark i');
+
+      if (document.body.classList.contains('dark')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
     });
   </script>
+
 </body>
 </html>
+```
